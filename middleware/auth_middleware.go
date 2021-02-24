@@ -21,13 +21,13 @@ func TokenAuthMiddleware(userService service.UserService) gin.HandlerFunc {
 		reqToken := c.Request.Header.Get("Authorization")
 		splitToken := strings.Split(reqToken, "Bearer ")
 		if len(splitToken) != 2 {
-			respondWithError(c, 400, "No Bearer token found")
+			respondWithError(c, 401, "No Bearer token found")
 			return
 		}
 
 		token := splitToken[1]
 		if token == "" {
-			respondWithError(c, 400, "API token required")
+			respondWithError(c, 401, "API token required")
 			return
 		}
 
