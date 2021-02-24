@@ -59,8 +59,8 @@ func (repo *productCardRepository) Update(productCard *model.ProductCard) error 
 	return repo.db.Save(productCard).Error
 }
 
-func (repo *productCardRepository) Delete(ID uint) error {
-	return repo.db.Delete(&model.ProductCard{}, ID).Error
+func (repo *productCardRepository) Delete(id uint) error {
+	return repo.db.Delete(&model.ProductCard{}, id).Error
 }
 
 func NewProductCardRepository(db *gorm.DB) *productCardRepository {
