@@ -1,0 +1,101 @@
+---
+- id: 1
+  name: Puree - Mocha
+  description: Streptococcus B carrier state compl preg/chldbrth
+  quantity: 6
+  price: 4241.66
+- id: 2
+  name: Soda Water - Club Soda, 355 Ml
+  description: Diffuse acute (reversible) ischemia of large intestine
+  quantity: 5
+  price: 4610.51
+- id: 3
+  name: Pie Filling - Apple
+  description: Insect bite (nonvenomous) of shoulder
+  quantity: 10
+  price: 940.62
+- id: 4
+  name: Wine - Tio Pepe Sherry Fino
+  description: Amebic liver abscess
+  quantity: 10
+  price: 3997.64
+- id: 5
+  name: Pasta - Penne Primavera, Single
+  description: Sprain of jaw, left side, initial encounter
+  quantity: 18
+  price: 9228.83
+- id: 6
+  name: Cleaner - Bleach
+  description: Unsp nondisp fx of sixth cervcal vert, 7thG
+  quantity: 14
+  price: 6611.49
+- id: 7
+  name: Sponge Cake Mix - Chocolate
+  description: Fracture of acetabulum
+  quantity: 11
+  price: 4505.73
+- id: 8
+  name: Coconut - Shredded, Sweet
+  description: Staphylococcal arthritis, right elbow
+  quantity: 17
+  price: 8848.42
+- id: 9
+  name: Bread - Pumpernickel
+  description: Prph tear of medial mensc, crnt injury, unsp knee, sequela
+  quantity: 8
+  price: 2842.26
+- id: 10
+  name: Longos - Chicken Caeser Salad
+  description: Nondisp commnt fx shaft of rad, r arm, 7thC
+  quantity: 9
+  price: 6570.88
+- id: 11
+  name: Crab - Claws, 26 - 30
+  description: Salter-Harris Type II physeal fracture of l calcaneus, 7thD
+  quantity: 7
+  price: 5877.8
+- id: 12
+  name: Cheese - Blue
+  description: Stress fracture, hip, unspecified, sequela
+  quantity: 16
+  price: 3504.96
+- id: 13
+  name: Wine - Placido Pinot Grigo
+  description: Abrasion, left thigh, sequela
+  quantity: 11
+  price: 2918.68
+- id: 14
+  name: Beef - Bresaola
+  description: Torus fracture of lower end of left humerus, init
+  quantity: 14
+  price: 8483.87
+- id: 15
+  name: Lemon Grass
+  description: Chronic lacrimal mucocele of bilateral lacrimal passages
+  quantity: 15
+  price: 7632.51
+- id: 16
+  name: Cake - Lemon Chiffon
+  description: Toxic effects of halogen derivatives of aliphatic hydrocrb
+  quantity: 6
+  price: 5195.37
+- id: 17
+  name: Yoplait Drink
+  description: Unspecified diabetes mellitus in pregnancy, first trimester
+  quantity: 18
+  price: 9234.13
+- id: 18
+  name: Glove - Cutting
+  description: Unsp fx unsp patella, subs for opn fx type 3A/B/C w nonunion
+  quantity: 13
+  price: 4655.06
+- id: 19
+  name: Kahlua
+  description: Allergy, unspecified, sequela
+  quantity: 12
+  price: 4284.02
+- id: 20
+  name: Plasticknivesblack
+  description: Central retinal artery occlusion, right eye
+  quantity: 16
+  price: 8107.52

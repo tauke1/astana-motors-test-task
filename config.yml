@@ -1,0 +1,11 @@
+RedisAddress: localhost:6379
+RedisPassword:
+RedisDatabase: 0
+JwtSecret: qwerty
+JwtIssuer: Tauke
+JwtExpirationHours: 1
+DbHost: localhost:3306
+DbUser: root
+DbName: test1
+DbPassword: 
+ServerPort: 8080
