@@ -36,8 +36,9 @@ func TokenAuthMiddleware(userService service.UserService) gin.HandlerFunc {
 				respondWithError(c, 401, err.Error())
 			} else {
 				respondWithError(c, 500, err.Error())
-				return
 			}
+
+			return
 		}
 
 		c.Set("Claim", claim)
