@@ -29,6 +29,7 @@ func SeedData(db *gorm.DB) {
 		if err != nil {
 			return err
 		}
+
 		err = db.Exec("DELETE FROM products").Error
 		if err != nil {
 			return err
