@@ -70,7 +70,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VybmFtZSI6InRhdWtlMSIsIlVzZXJJZCI6MiwiZXhwIjoxNjE0MTU3NzM5LCJpc3MiOiJUYXVrZSJ9.uXzQXSW2xQY-iFA98Vvx7X1D9Nn8ReOYcTOIAkcxhfs",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VybmFtZSI6InRhdWtlMSIsIlVzZXJJRCI6MiwiZXhwIjoxNjE0MTc3NDY3LCJpc3MiOiJUYXVrZSJ9.HbrWa9yqIfF2IiYth_LyxRSA6HE_ml7Fy3ETKAElvcc",
 						"type": "text"
 					}
 				],
@@ -99,7 +99,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VybmFtZSI6InRhdWtlMSIsIlVzZXJJRCI6MiwiZXhwIjoxNjE0MTY5Mjk1LCJpc3MiOiJUYXVrZSJ9.mBWnje-F5oU8AhCkBxuhVImy4cZqL7YnmOMMA7Q2pmY",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VybmFtZSI6InRhdWtlMSIsIlVzZXJJRCI6MiwiZXhwIjoxNjE0MTc4Mzk5LCJpc3MiOiJUYXVrZSJ9.01qyKcbK7bUq67rWckahLt2YT3GNdk6x-3Tlx-4GsDM",
 						"type": "text"
 					}
 				],
@@ -128,33 +128,7 @@
 			"response": []
 		},
 		{
-			"name": "Logout Copy",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VybmFtZSI6InRhdWtlMSIsIlVzZXJJZCI6MiwiZXhwIjoxNjE0MTU3NzM5LCJpc3MiOiJUYXVrZSJ9.uXzQXSW2xQY-iFA98Vvx7X1D9Nn8ReOYcTOIAkcxhfs",
-						"type": "text"
-					}
-				],
-				"url": {
-					"raw": "localhost:8080/api/auth/logout",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"auth",
-						"logout"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "products",
+			"name": "Get products by pagination",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -163,7 +137,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VybmFtZSI6InRhdWtlMSIsIlVzZXJJZCI6MiwiZXhwIjoxNjE0MTYzMDI3LCJpc3MiOiJUYXVrZSJ9.86rCDIINGNZ6PkMb_ahErQUcyMRLhjLToXpbvuV1Hdg",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VybmFtZSI6InRhdWtlMSIsIlVzZXJJRCI6MiwiZXhwIjoxNjE0MTc4Mzk5LCJpc3MiOiJUYXVrZSJ9.01qyKcbK7bUq67rWckahLt2YT3GNdk6x-3Tlx-4GsDM",
 						"type": "text"
 					}
 				],
@@ -177,7 +151,7 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/api/products?pageSize=22&pageNumber=1",
+					"raw": "localhost:8080/api/products?pageSize=10&pageNumber=1",
 					"host": [
 						"localhost"
 					],
@@ -189,12 +163,75 @@
 					"query": [
 						{
 							"key": "pageSize",
-							"value": "22"
+							"value": "10"
 						},
 						{
 							"key": "pageNumber",
 							"value": "1"
 						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Products",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VybmFtZSI6InRhdWtlMSIsIlVzZXJJRCI6MiwiZXhwIjoxNjE0MTc4Mzk5LCJpc3MiOiJUYXVrZSJ9.01qyKcbK7bUq67rWckahLt2YT3GNdk6x-3Tlx-4GsDM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"tauke1\",\r\n    \"password\": \"qwerty\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/products-all",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"products-all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get product",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VybmFtZSI6InRhdWtlMSIsIlVzZXJJRCI6MiwiZXhwIjoxNjE0MTc4Mzk5LCJpc3MiOiJUYXVrZSJ9.01qyKcbK7bUq67rWckahLt2YT3GNdk6x-3Tlx-4GsDM",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/api/products/20",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"products",
+						"20"
 					]
 				}
 			},
@@ -207,7 +244,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VybmFtZSI6InRhdWtlMSIsIlVzZXJJZCI6MiwiZXhwIjoxNjE0MTYzMDI3LCJpc3MiOiJUYXVrZSJ9.86rCDIINGNZ6PkMb_ahErQUcyMRLhjLToXpbvuV1Hdg",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VybmFtZSI6InRhdWtlMSIsIlVzZXJJRCI6MiwiZXhwIjoxNjE0MTc4Mzk5LCJpc3MiOiJUYXVrZSJ9.01qyKcbK7bUq67rWckahLt2YT3GNdk6x-3Tlx-4GsDM",
 						"type": "text"
 					}
 				],
@@ -241,7 +278,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VybmFtZSI6InRhdWtlMSIsIlVzZXJJZCI6MiwiZXhwIjoxNjE0MTYzMDI3LCJpc3MiOiJUYXVrZSJ9.86rCDIINGNZ6PkMb_ahErQUcyMRLhjLToXpbvuV1Hdg",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VybmFtZSI6InRhdWtlMSIsIlVzZXJJRCI6MiwiZXhwIjoxNjE0MTc4Mzk5LCJpc3MiOiJUYXVrZSJ9.01qyKcbK7bUq67rWckahLt2YT3GNdk6x-3Tlx-4GsDM",
 						"type": "text"
 					}
 				],
@@ -255,7 +292,7 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/api/products/25",
+					"raw": "localhost:8080/api/products/26",
 					"host": [
 						"localhost"
 					],
@@ -263,7 +300,7 @@
 					"path": [
 						"api",
 						"products",
-						"25"
+						"26"
 					]
 				}
 			},
@@ -276,7 +313,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VybmFtZSI6InRhdWtlMSIsIlVzZXJJZCI6MiwiZXhwIjoxNjE0MTYzMDI3LCJpc3MiOiJUYXVrZSJ9.86rCDIINGNZ6PkMb_ahErQUcyMRLhjLToXpbvuV1Hdg",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VybmFtZSI6InRhdWtlMSIsIlVzZXJJRCI6MiwiZXhwIjoxNjE0MTc4Mzk5LCJpc3MiOiJUYXVrZSJ9.01qyKcbK7bUq67rWckahLt2YT3GNdk6x-3Tlx-4GsDM",
 						"type": "text"
 					}
 				],
@@ -290,7 +327,7 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/api/products/25",
+					"raw": "localhost:8080/api/products/26",
 					"host": [
 						"localhost"
 					],
@@ -298,7 +335,7 @@
 					"path": [
 						"api",
 						"products",
-						"25"
+						"26"
 					]
 				}
 			},
