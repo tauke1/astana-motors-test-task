@@ -25,7 +25,7 @@ func SeedData(db *gorm.DB) {
 	}
 
 	db.Transaction(func(tx *gorm.DB) error {
-		err := db.Exec("DELETE FROM product_baskets").Error
+		err := db.Exec("DELETE FROM product_cards").Error
 		if err != nil {
 			return err
 		}

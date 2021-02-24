@@ -9,3 +9,4 @@ DbUser: root
 DbName: test1
 DbPassword: 
 ServerPort: 8080
+RunDBSeed: true

@@ -22,7 +22,10 @@ func RegisterServices() *core.Core {
 	redisClient := cache.NewRedisClient(configuration.C.RedisPassword, configuration.C.RedisDatabase, configuration.C.RedisAddress)
 	db := database.NewDB(configuration.C.DbHost, configuration.C.DbUser, configuration.C.DbPassword, configuration.C.DbName)
 	db.AutoMigrate(&dbModel.User{}, &dbModel.Product{}, &dbModel.ProductCard{})
-	database.SeedData(db)
+	if configuration.C.RunDBSeed {
+		database.SeedData(db)
+	}
+
 	userRepository := repository.NewUserRepository(db)
 	productRepository := repository.NewProductRepository(db)
 	productCardRepository := repository.NewProductCardRepository(db)

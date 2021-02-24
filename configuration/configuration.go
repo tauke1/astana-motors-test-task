@@ -20,6 +20,7 @@ type configuration struct {
 	DbUser             string
 	DbName             string
 	ServerPort         int
+	RunDBSeed          bool
 }
 
 var C configuration
