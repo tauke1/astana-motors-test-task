@@ -51,7 +51,7 @@ func (c *userController) Logout(context *gin.Context) {
 	token := splitToken[1]
 	err := c.userService.Logout(token)
 	if err != nil {
-		context.JSON(500, model.NewErrorResponse("Cant parse user claims"))
+		context.JSON(500, model.NewErrorResponse(err.Error()))
 		return
 	}
 
@@ -73,7 +73,7 @@ func (c *userController) GetInfo(context *gin.Context) {
 
 	user, err := c.userService.Get(parsedClaim.UserID)
 	if err != nil {
-		context.JSON(500, model.NewErrorResponse("Cant parse user claims"))
+		context.JSON(500, model.NewErrorResponse(err.Error()))
 		return
 	}
 
