@@ -49,6 +49,11 @@ func (c *userController) Logout(context *gin.Context) {
 	}
 
 	token := splitToken[1]
+	if token == "" {
+		context.JSON(400, model.NewErrorResponse("API Token required"))
+		return
+	}
+
 	err := c.userService.Logout(token)
 	if err != nil {
 		context.JSON(500, model.NewErrorResponse(err.Error()))
