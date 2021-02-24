@@ -33,6 +33,7 @@ func SeedData(db *gorm.DB) {
 		if err != nil {
 			return err
 		}
+
 		for _, product := range products {
 			err = db.Create(&product).Error
 			if err != nil {
