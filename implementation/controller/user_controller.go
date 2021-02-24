@@ -62,11 +62,13 @@ func (c *userController) GetInfo(context *gin.Context) {
 	claim, ok := context.Get("Claim")
 	if !ok {
 		context.JSON(401, model.NewErrorResponse("No claims found"))
+		return
 	}
 
 	parsedClaim, ok := claim.(*auth.JwtClaim)
 	if !ok {
 		context.JSON(500, model.NewErrorResponse("Cant parse user claims"))
+		return
 	}
 
 	user, err := c.userService.Get(parsedClaim.UserID)

@@ -10,6 +10,7 @@ import (
 	"test/interface/hasher"
 	"test/interface/repository"
 	"test/interface/service"
+	"time"
 
 	"github.com/jinzhu/gorm"
 )
@@ -128,7 +129,12 @@ func (s *userService) Logout(token string) error {
 	}
 
 	blacklistKey := fmt.Sprintf("%s%s", blackListCacheKey, token)
-	err := s.cacheClient.SetString(blacklistKey, "")
+	// Проставим срок действия ключа в кэше - 1 час, именно такое значение имеется в конфиге времени жизни токена
+	// Я бы мог подсчитать точный срок окончания жизни токена спарсив его, но думаю поставить дефолтное время жизни
+	// токена тоже неплохой вариант
+	expirationDuration := time.Duration(time.Hour * time.Duration(s.jwtWrapper.GetDefaultTokenExpirationHours()))
+	// Записываем ключ в кэш, нам не нужно значение, поэтому записываем пустую строку
+	err := s.cacheClient.SetString(blacklistKey, "", expirationDuration)
 	return err
 }
 

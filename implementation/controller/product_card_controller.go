@@ -17,11 +17,13 @@ func (c *productCardController) GetByUserID(ctx *gin.Context) {
 	claim, ok := ctx.Get("Claim")
 	if !ok {
 		ctx.JSON(401, model.NewErrorResponse("No claims found"))
+		return
 	}
 
 	parsedClaim, ok := claim.(*auth.JwtClaim)
 	if !ok {
 		ctx.JSON(500, model.NewErrorResponse("Cant parse user claims"))
+		return
 	}
 
 	cardItems, err := c.productCardService.GetByUserID(parsedClaim.UserID)
@@ -66,11 +68,13 @@ func (c *productCardController) DeleteItemFromCard(ctx *gin.Context) {
 	claim, ok := ctx.Get("Claim")
 	if !ok {
 		ctx.JSON(401, model.NewErrorResponse("No claims found"))
+		return
 	}
 
 	parsedClaim, ok := claim.(*auth.JwtClaim)
 	if !ok {
 		ctx.JSON(500, model.NewErrorResponse("Cant parse user claims"))
+		return
 	}
 
 	request := model.DeleteProductCardItemRequest{}
@@ -102,11 +106,13 @@ func (c *productCardController) ChangeItemQuantityInCard(ctx *gin.Context) {
 	claim, ok := ctx.Get("Claim")
 	if !ok {
 		ctx.JSON(401, model.NewErrorResponse("No claims found"))
+		return
 	}
 
 	parsedClaim, ok := claim.(*auth.JwtClaim)
 	if !ok {
 		ctx.JSON(500, model.NewErrorResponse("Cant parse user claims"))
+		return
 	}
 
 	request := model.ChangeProductCardItemQuantityRequest{}

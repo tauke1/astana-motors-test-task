@@ -18,7 +18,7 @@ import (
 
 func RegisterServices() *core.Core {
 	hasher := hasher.NewSha256Hasher()
-	jwtWrapper := auth.NewJwtWrapper(configuration.C.JwtSecret, configuration.C.JwtIssuer, int64(configuration.C.JwtExpirationHours))
+	jwtWrapper := auth.NewJwtWrapper(configuration.C.JwtSecret, configuration.C.JwtIssuer, configuration.C.JwtExpirationHours)
 	redisClient := cache.NewRedisClient(configuration.C.RedisPassword, configuration.C.RedisDatabase, configuration.C.RedisAddress)
 	db := database.NewDB(configuration.C.DbHost, configuration.C.DbUser, configuration.C.DbPassword, configuration.C.DbName)
 	db.AutoMigrate(&dbModel.User{}, &dbModel.Product{}, &dbModel.ProductCard{})

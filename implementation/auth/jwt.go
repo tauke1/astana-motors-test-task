@@ -12,7 +12,7 @@ import (
 type jwtWrapper struct {
 	SecretKey       string
 	Issuer          string
-	ExpirationHours int64
+	ExpirationHours int
 }
 
 // GenerateToken generates a jwt token
@@ -64,7 +64,11 @@ func (j *jwtWrapper) ValidateToken(signedToken string) (claims *auth.JwtClaim, e
 	return
 }
 
-func NewJwtWrapper(secretKey, issuer string, expirationHours int64) *jwtWrapper {
+func (j *jwtWrapper) GetDefaultTokenExpirationHours() int {
+	return j.ExpirationHours
+}
+
+func NewJwtWrapper(secretKey, issuer string, expirationHours int) *jwtWrapper {
 	if secretKey == "" {
 		panic("secretKey must not be empty")
 	}
